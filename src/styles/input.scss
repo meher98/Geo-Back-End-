@@ -1,0 +1,161 @@
+@import "./vars.scss";
+.custom-input-error-container {
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+.custom-input-container {
+    border-bottom: 1px solid;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding-top: 25px;
+    position: relative;
+    cursor: text;
+    .icon-container {
+        justify-self: end;
+    }
+    label {
+        width: 100%;
+        span {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            font-size: 1.5rem;
+            transition: all $transition-time;
+        }
+
+        .span-focus {
+            top: 0px;
+            font-size: 0.8rem;
+        }
+
+        .custom-input {
+            background-color: transparent;
+            color: inherit;
+            border: none;
+            width: 100%;
+            padding-bottom: 15px;
+            font-size: inherit;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                appearance: none;
+            }
+        }
+    }
+}
+.input-calendar-container {
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    transform: scale(0.6) translate(-80%, calc(-40% + 50px));
+    background-color: $base-color;
+    border-radius: 5px;
+    background-color: $base-color;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.custom-input-container-error {
+    color: $red !important;
+}
+.custom-input-error-msg {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: $red;
+}
+.select-drop-down {
+    position: absolute;
+    width: 100%;
+    background-color: $third-color;
+    color: $base-color;
+    z-index: 1;
+    max-height: 206px;
+    padding: 5px 0;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow-y: auto;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    option {
+        padding: 5px;
+        width: 100%;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &:hover {
+            color: $third-color;
+            background-color: $base-color;
+            cursor: pointer;
+        }
+    }
+}
+/* toggle-pill-color */
+.toggle-pill-color {
+    width: 3rem !important;
+    margin: 0 0 0 calc(100% - 3rem);
+}
+
+.toggle-pill-color input[type="checkbox"] {
+    display: none;
+}
+.toggle-pill-color input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    width: 3em;
+    height: 1.6em;
+    margin-bottom: 8px;
+    border-radius: 1em;
+    background: #e84d4d;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    // -webkit-user-select: none;
+    // -moz-user-select: none;
+    // -ms-user-select: none;
+    -webkit-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+}
+.toggle-pill-color input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1em;
+    background: #fff;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.toggle-pill-color input[type="checkbox"]:checked + label {
+    background: #47cf73;
+}
+.toggle-pill-color input[type="checkbox"]:checked + label:before {
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    left: 1.6em;
+}
+/* toggle-pill-color end */
+@media (max-height: 830px) {
+    .input-calendar-container {
+        position: absolute;
+        width: fit-content;
+        top: 0;
+    }
+}
+@media (max-height: 700px) {
+    .input-calendar-container {
+        position: absolute;
+        width: fit-content;
+        top: 0;
+        min-width: 350px;
+        transform: scale(0.6) translate(-80%, calc(-100% + 50px));
+    }
+}

@@ -1,0 +1,58 @@
+@import "./vars.scss";
+.modal-filter {
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba($color: black, $alpha: 0.7);
+    z-index: 3;
+    &.open {
+        display: block;
+    }
+}
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 10px;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    &.open {
+        display: block;
+    }
+}
+.modal-content-container {
+    position: relative;
+    padding: 20px;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal-btn-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    .round-btn {
+        background-color: $fourth-color;
+        color: $base-color;
+        &:active {
+            background-color: grayscale($color: $fourth-color);
+        }
+    }
+}
+@media (max-height: 500px) {
+    .modal-container {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}

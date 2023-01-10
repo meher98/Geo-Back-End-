@@ -1,0 +1,97 @@
+@import "./vars.scss";
+.table-container {
+    overflow-x: auto;
+}
+.table-1 {
+    border-collapse: collapse;
+    width: 100%;
+    .table-content {
+        border-top: 1px solid $fourth-color;
+        &:first-child {
+            border: none;
+        }
+    }
+}
+
+.table-1 td,
+.table-1 th {
+    padding: 0 10px;
+    height: 50px;
+    font-size: 1.2rem;
+    color: $fourth-color;
+    border-top: none !important;
+    text-align: center;
+    &:first-child {
+        border-left: none;
+    }
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.table-1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background: $fourth-color;
+    color: $base-color;
+}
+.supp {
+    color: white;
+    padding: 8px;
+    text-align: center;
+    margin: 0px !important;
+}
+.add-button-container-open {
+    z-index: 1;
+    width: 80vw;
+    position: fixed;
+    top: 80px;
+    padding-top: 6px;
+    padding-right: 20px;
+}
+.add-button-container-close {
+    z-index: 1;
+    width: 100vw;
+    position: fixed;
+    top: 80px;
+    padding-top: 6px;
+    padding-right: 20px;
+}
+.add-button {
+    margin-left: auto !important;
+}
+table th:first-child {
+    border-radius: 5px 0 0 0;
+    border-top: none !important;
+    border-left: none !important;
+}
+table th:last-child {
+    border-radius: 0 5px 0 0;
+    border-top: none !important;
+    border-right: none !important;
+}
+.total-container td,
+.total-container th {
+    height: 40px !important;
+    text-align: center;
+    border: none !important;
+    background: $fourth-color;
+    color: $base-color !important;
+    font-size: 1.4rem;
+    &:last-child {
+        border-radius: 0 0 5px 0;
+    }
+    &:first-child {
+        border-radius: 0 0 0 5px;
+    }
+}
+.total {
+    text-align: right !important;
+}
+
+@media (max-width: 650px) {
+    .mobile {
+        display: none;
+    }
+}

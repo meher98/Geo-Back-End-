@@ -1,0 +1,135 @@
+@import "./vars.scss";
+
+.sidebar-global-container {
+    background: linear-gradient(45deg, $third-color 0%, $second-color 100%);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar-container {
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $base-color;
+    transform: translate(-100%);
+    transition: transform $transition-time;
+    z-index: 1;
+    overflow-y: auto;
+    &.open {
+        transform: translate(0%);
+    }
+}
+.open-close-btn {
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    color: $base-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform calc($transition-time * 3), margin-left $transition-time;
+    transform: rotate(180deg);
+    &.open {
+        transform: rotate(0);
+        margin-left: 300px;
+    }
+}
+.sidebar-filter {
+    display: none;
+}
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 200px;
+    img {
+        height: 100%;
+    }
+}
+.sidebar-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    .round-btn {
+        color: $base-color;
+        background-color: $fourth-color;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.5rem;
+        margin: 20px 0;
+        align-self: center;
+    }
+}
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $third-color;
+    font-size: 1.5rem;
+    padding: 20px 30px;
+    cursor: pointer;
+    &:hover,
+    &.active {
+        background: linear-gradient(45deg, $third-color 0%, $second-color 100%);
+        color: $base-color;
+        .gradient-text {
+            background: transparent !important;
+            -webkit-text-fill-color: $base-color !important;
+        }
+    }
+}
+.sidebar-page-container {
+    padding: 70px 50px;
+    transition: all $transition-time;
+    width: 100vw;
+    min-height: 100vh;
+    margin-left: 0px;
+    overflow-x: hidden;
+    &.open {
+        width: calc(100vw - 300px);
+        margin-left: 300px;
+    }
+}
+@media (max-width: 850px) {
+    .sidebar-page-container {
+        padding: 70px 10px;
+        &.open {
+            width: 100vw;
+            margin-left: 0px;
+        }
+    }
+
+    .open-close-btn {
+        left: 7px;
+        color: $base-color;
+        &.open {
+            color: $second-color;
+        }
+    }
+    .sidebar-filter {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background-color: rgba($color: black, $alpha: 0.7);
+        &.open {
+            display: block;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .open-close-btn {
+        &.open {
+            margin-left: 80%;
+        }
+    }
+    .sidebar-container {
+        width: 80%;
+    }
+}

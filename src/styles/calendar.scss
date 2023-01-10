@@ -1,0 +1,107 @@
+@import "./vars.scss";
+.calendar-container {
+    ul {
+        list-style-type: none;
+    }
+    min-width: 300px;
+}
+
+.month {
+    padding: 20px 25px;
+    width: 100%;
+    background: $fourth-color;
+    text-align: center;
+    border-radius: 5px;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+        li {
+            color: $base-color;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+    }
+    .prev {
+        margin-right: auto;
+        padding-top: 5px;
+    }
+    .next {
+        margin-left: auto;
+        padding-top: 5px;
+    }
+}
+
+.days {
+    padding: 30px 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    row-gap: 10px;
+    justify-content: space-evenly;
+    &.showWeek {
+        grid-template-columns: repeat(8, auto);
+    }
+    li {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.3rem;
+        color: $second-color;
+        cursor: pointer;
+    }
+    .not-in-month {
+        color: $third-color;
+    }
+    .weekday {
+        color: $second-color;
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .week {
+        color: $fourth-color;
+    }
+    .active {
+        border: 1px solid $second-color;
+        border-radius: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .days {
+        li {
+            height: 30px;
+            width: 30px;
+            font-size: 1rem;
+        }
+        .weekday {
+            font-size: 1.2rem;
+        }
+    }
+    .month {
+        ul {
+            li {
+                font-size: 1.4rem;
+            }
+        }
+        .prev {
+            position: absolute;
+            left: 30px;
+            margin-right: 0;
+        }
+        .next {
+            position: absolute;
+            right: 30px;
+            margin-right: 0;
+        }
+    }
+}

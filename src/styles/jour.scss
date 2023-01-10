@@ -1,0 +1,103 @@
+@import "./vars.scss";
+.jour-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.mini-card-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 120px);
+    gap: 30px;
+}
+.mini-card-content {
+    color: $fourth-color;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    p {
+        font-size: 1.8rem;
+    }
+    .mini-card-title {
+        font-size: 1.3rem;
+    }
+}
+.actions-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+    svg {
+        cursor: pointer;
+    }
+}
+.Add-button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    font-size: 2rem;
+    color: $fourth-color;
+    .circle-btn {
+        background-color: $base-color;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+            rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        &:active {
+            background: $fourth-color;
+            color: $base-color;
+            box-shadow: none;
+        }
+    }
+}
+.depense-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .mini-card-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 120px);
+    }
+}
+@media screen and (max-width: 1000px) {
+    .mini-card-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 120px);
+        div {
+            &:last-child {
+                grid-column: 2;
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .mini-card-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 120px);
+        div {
+            &:last-child {
+                grid-column: 1/3;
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .mini-card-content {
+        p {
+            font-size: 1.4rem;
+        }
+        .mini-card-title {
+            font-size: 1.3rem;
+        }
+    }
+}
